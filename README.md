@@ -26,6 +26,12 @@ http://localhost:8181/api/catalog/sku/345
 http://localhost:8282/api/inventory/2
 
 
+###product-service:
+
+http://localhost:8181/api/product/id/2
+
+http://localhost:8181/api/product/sku/345
+
 
 ###Eureka service-registry
 
