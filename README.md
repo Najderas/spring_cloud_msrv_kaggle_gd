@@ -8,10 +8,21 @@ GD Distributed systems and microservices architecture: Capstone project: Microse
 ### Build single module:
 `catalog-service> ./mvnw spring-boot:run`
 
+`inventory-service> ./mvnw spring-boot:run`
+
 
 
 catalog-service:
+
 http://localhost:8181/api/catalog/
-http://localhost:8181/api/catalog/id/
-http://localhost:8181/api/catalog/sku/
+
+http://localhost:8181/api/catalog/id/2
+
+http://localhost:8181/api/catalog/sku/345
+
+
+inventory-service:
+
+http://localhost:8282/api/inventory/2
+
 
