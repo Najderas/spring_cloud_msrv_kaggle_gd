@@ -21,13 +21,20 @@ public class InventoryService {
         availability = new HashMap<String, Integer>();
     }
     
+    private Integer generateAvailability(String code) {
+        int randomNum = ThreadLocalRandom.current().nextInt(0, 3001);
+        // simulate products shortages
+        if (Integer.parseInt(code) < 8) {
+            randomNum = 0;
+        }
+        availability.put(code, randomNum);
+        return randomNum;
+    }
 
     public Integer availabilityByCode(String code) {
         Integer result = availability.get(code);
         if (result == null) {
-            int randomNum = ThreadLocalRandom.current().nextInt(0, 3001);
-            result = randomNum;
-            availability.put(code, result);
+            result = generateAvailability(code);
         }
         return result;
     }

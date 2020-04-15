@@ -35,5 +35,7 @@ http://localhost:8181/api/product/sku/345
 
 ###Eureka service-registry
 
+http://localhost:8765/  console
+
 http://localhost:8765/eureka
 

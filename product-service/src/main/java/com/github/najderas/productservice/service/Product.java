@@ -28,6 +28,7 @@ public class Product implements java.io.Serializable {
     public String total_number_reviews;
     public String reviews;
 
+    // Needed to deserialize
     public Product() {
         this("", "", "", "", "", "", "", "", "", "", "", "", "", "");
     }

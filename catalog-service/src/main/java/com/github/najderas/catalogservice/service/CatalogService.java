@@ -35,7 +35,16 @@ public class CatalogService {
         products.add(new Product("8", "567", "bar", "", "7", "", "boo", "", "", "", "", "", "", ""));
         products.add(new Product("9", "567", "baz", "", "8", "", "boo", "", "", "", "", "", "", ""));
         products.add(new Product("10", "567", "doo", "", "11", "", "boom", "", "", "", "", "", "", ""));
-        products.add(new Product("11", "678", "abcdef", "", "23", "", "yupi", "", "", "", "", "", "", ""));
+        products.add(new Product("11", "234", "abcdef", "", "18", "", "toot", "", "", "", "", "", "", ""));
+        products.add(new Product("12", "234", "wwwwe", "", "95", "", "toot", "", "", "", "", "", "", ""));
+        products.add(new Product("13", "234", "tttweww", "", "23", "", "toot", "", "", "", "", "", "", ""));
+        products.add(new Product("14", "345", "omglmao", "", "23", "", "yupi", "", "", "", "", "", "", ""));
+        products.add(new Product("15", "345", "omgnfao", "", "231", "", "toot", "", "", "", "", "", "", ""));
+        products.add(new Product("16", "456", "barbarbaz", "", "17", "", "toot", "", "", "", "", "", "", ""));
+        products.add(new Product("17", "567", "foo", "", "6", "", "boo", "", "", "", "", "", "", ""));
+        products.add(new Product("18", "567", "bar", "", "7", "", "boo", "", "", "", "", "", "", ""));
+        products.add(new Product("19", "567", "baz", "", "8", "", "boo", "", "", "", "", "", "", ""));
+        products.add(new Product("20", "678", "abcdef", "", "23", "", "yupi", "", "", "", "", "", "", ""));
     }
     
 

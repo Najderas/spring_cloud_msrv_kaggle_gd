@@ -29,6 +29,7 @@ public class ProductController {
     public Product productByCode(@PathVariable String code) {
         return productService.findProductByCode(code);
     }
+    
     @GetMapping("/sku/{sku}")
     public List<Product> productsBySku(@PathVariable String sku) {
         return productService.findProductsBySku(sku);
