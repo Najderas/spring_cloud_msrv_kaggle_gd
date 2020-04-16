@@ -53,3 +53,13 @@ http://localhost:8765/eureka    for services
 
 http://localhost:8989/hystrix 
 
+
+### Zipkin server
+
+download:
+`curl -sSL https://zipkin.io/quickstart.sh | bash -s`
+run:
+`zipkin-service> java -jar zipkin.jar`
+
+http://localhost:9411/zipkin/    UI dashboard
+
