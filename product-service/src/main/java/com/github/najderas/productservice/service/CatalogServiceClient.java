@@ -29,7 +29,7 @@ public class CatalogServiceClient {
         this.restTemplate = restTemplate;
     }
 
-    @HystrixCommand(fallbackMethod = "findProductByCodeFallback")
+    @HystrixCommand(fallbackMethod = "findProductByCodeFallback", ignoreExceptions = {ServiceUnavailableException.class})
     public Product findProductByCode(String code){
         Product prod = null;
         ResponseEntity<Product> itemResponseEntity =
@@ -52,7 +52,7 @@ public class CatalogServiceClient {
         return prod;
     }
 
-    @HystrixCommand(fallbackMethod = "findProductBySkuFallback")
+    @HystrixCommand(fallbackMethod = "findProductBySkuFallback", ignoreExceptions = {ServiceUnavailableException.class})
     public List<Product> findProductBySku(String sku){
         Product[] products_arr = null;
         ResponseEntity<Product[]> itemResponseEntity =
@@ -79,12 +79,12 @@ public class CatalogServiceClient {
     // Fallbacks
     @SuppressWarnings("unused")
     public Product findProductByCodeFallback(String code){
-        throw new ServiceUnavailableException("Inventory service unavailable! Cannot procede with request.");
+        throw new ServiceUnavailableException("Catalog service unavailable! Cannot procede with request.");
     }
 
     @SuppressWarnings("unused")
     public List<Product> findProductBySkuFallback(String sku){
-        throw new ServiceUnavailableException("Inventory service unavailable! Cannot procede with request.");
+        throw new ServiceUnavailableException("Catalog service unavailable! Cannot procede with request.");
     }
 
 

@@ -33,6 +33,7 @@ public class ProductService {
     }
     
     public Product findProductByCode(String code) {
+        // TODO: I should throw ServiceUnavailableException here, outside hystrix to make it always work properly... :(
         // short version
         if (inventoryServiceClient.findProductQuantity(code) > 0) {
             return catalogServiceClient.findProductByCode(code);

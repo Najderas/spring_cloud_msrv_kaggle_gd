@@ -30,13 +30,16 @@ http://localhost:8282/api/inventory/9
 
 ### product-service:
 
-http://localhost:8888/api/product/id/2
+http://localhost:8888/api/product/id/2    returns null - 0 quantity for prodId 2
 
-http://localhost:8888/api/product/id/9
+http://localhost:8888/api/product/id/9    returns valid product
 
-http://localhost:8888/api/product/sku/345
+http://localhost:8888/api/product/sku/345    returns 2 products (2 other hidden due to 0 in inventory)
+http://localhost:8888/api/product/sku/567    20% timeouts (5 ok and 6th timeouts); returns 503 status
+http://localhost:8888/api/product/sku/789    100% timeouts; returns 503 status
 
-http://localhost:8888/actuator/hystrix.stream,
+
+http://localhost:8888/actuator/hystrix.stream  for hystrix dashboard
 
 
 ### Eureka service-registry

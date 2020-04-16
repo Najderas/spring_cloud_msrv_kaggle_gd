@@ -17,14 +17,33 @@ public class CatalogService {
     private List<Product> products;
 
     public CatalogService() {
-        products = new ArrayList();
-        // products.add(new Product("swkokurdealetojestbrzydkiemehnonic"));
-        // products.add(new Product("wkrnojaniemogejuzilemozna"));
-        // products.add(new Product("prwjkskonczwascwstydioszczedzjnmg"));
+        initProductsList();
+    }
+    
 
+    public List<Product> allProducts() {
+        return products;
+    }
+
+    public Optional<Product> findProductByCode(String code) {
+
+        List<Product> matches = products.stream().filter(p -> p.uniq_id.equals(code)).collect(Collectors.toList());
+
+        return Optional.ofNullable(matches.isEmpty() ? null : matches.get(0));
+    }
+
+    public List<Product> findProductsBySku(String sku) {
+        
+        List<Product> matches = products.stream().filter(p -> p.sku.equals(sku)).collect(Collectors.toList());
+        
+        return matches;
+    }
+
+    private void initProductsList() {
+
+        products = new ArrayList();
         // new Product(uniq_id, "", "", "", "", "", "", "", "", "", "", "", "", "");
         // new Product(uniq_id, sku, name_title, description, list_price, sale_price, category, category_tree, avg_product_rating, "", "", "", tot_no_reviews, "");
-
         products.add(new Product("1", "234", "abcdef", "", "13", "", "toot", "", "", "", "", "", "", ""));
         products.add(new Product("2", "234", "wwwwe", "", "123", "", "toot", "", "", "", "", "", "", ""));
         products.add(new Product("3", "234", "tttweww", "", "3", "", "toot", "", "", "", "", "", "", ""));
@@ -45,34 +64,26 @@ public class CatalogService {
         products.add(new Product("18", "567", "bar", "", "7", "", "boo", "", "", "", "", "", "", ""));
         products.add(new Product("19", "567", "baz", "", "8", "", "boo", "", "", "", "", "", "", ""));
         products.add(new Product("20", "678", "abcdef", "", "23", "", "yupi", "", "", "", "", "", "", ""));
-    }
-    
-
-    public List<Product> allProducts() {
-        // List<Product> list = new ArrayList();
-        // list.add(new Product("swkokurdealetojestbrzydkiemehnonic"));
-        // list.add(new Product("wkrnojaniemogejuzilemozna"));
-        // list.add(new Product("prwjkskonczwascwstydioszczedzjnmg"));
-        // return list;
-        return products;
-    }
-
-    public Optional<Product> findProductByCode(String code) {
-        // return Optional.ofNullable(products.get(0));
-        List<Product> matches = products.stream().filter(p -> p.uniq_id.equals(code)).collect(Collectors.toList());
-        // if (matches.isEmpty()) {
-        //     return Optional.empty();
-        // } else {
-        //     return Optional.ofNullable(matches.get(0));
-        // }
-
-        return Optional.ofNullable(matches.isEmpty() ? null : matches.get(0));
-    }
-
-    public List<Product> findProductsBySku(String sku) {
-        List<Product> matches = products.stream().filter(p -> p.sku.equals(sku)).collect(Collectors.toList());
-        
-        return matches;
+        products.add(new Product("21", "678", "abcdef", "", "13", "", "toot", "", "", "", "", "", "", ""));
+        products.add(new Product("22", "789", "wwwwe", "", "123", "", "toot", "", "", "", "", "", "", ""));
+        products.add(new Product("23", "789", "tttweww", "", "3", "", "toot", "", "", "", "", "", "", ""));
+        products.add(new Product("24", "789", "omglmao", "", "13", "", "yupi", "", "", "", "", "", "", ""));
+        products.add(new Product("25", "789", "omgnfao", "", "31", "", "toot", "", "", "", "", "", "", ""));
+        products.add(new Product("26", "789", "barbarbaz", "", "13", "", "toot", "", "", "", "", "", "", ""));
+        products.add(new Product("27", "789", "foo", "", "6", "", "boo", "", "", "", "", "", "", ""));
+        products.add(new Product("28", "789", "bar", "", "7", "", "boo", "", "", "", "", "", "", ""));
+        products.add(new Product("29", "789", "baz", "", "8", "", "boo", "", "", "", "", "", "", ""));
+        products.add(new Product("30", "789", "doo", "", "11", "", "boom", "", "", "", "", "", "", ""));
+        products.add(new Product("31", "789", "abcdef", "", "13", "", "toot", "", "", "", "", "", "", ""));
+        products.add(new Product("32", "789", "wwwwe", "", "123", "", "toot", "", "", "", "", "", "", ""));
+        products.add(new Product("33", "789", "tttweww", "", "3", "", "toot", "", "", "", "", "", "", ""));
+        products.add(new Product("34", "789", "omglmao", "", "13", "", "yupi", "", "", "", "", "", "", ""));
+        products.add(new Product("35", "789", "omgnfao", "", "31", "", "toot", "", "", "", "", "", "", ""));
+        products.add(new Product("36", "789", "barbarbaz", "", "13", "", "toot", "", "", "", "", "", "", ""));
+        products.add(new Product("37", "789", "foo", "", "6", "", "boo", "", "", "", "", "", "", ""));
+        products.add(new Product("38", "789", "bar", "", "7", "", "boo", "", "", "", "", "", "", ""));
+        products.add(new Product("39", "789", "baz", "", "8", "", "boo", "", "", "", "", "", "", ""));
+        products.add(new Product("40", "789", "doo", "", "11", "", "boom", "", "", "", "", "", "", ""));
     }
 
 }
