@@ -37,15 +37,6 @@ public class CatalogController {
     @GetMapping("/sku/{sku}")
     public List<Product> productsBySku(@PathVariable String sku) {
         return catalogService.findProductsBySku(sku);
-        // return catalogService.findProductsBySku(sku)
-        //         .orElseThrow(() -> new ProductNotFoundException("Product with sku ["+sku+"] doesn't exist"));
     }
-
-    
-
-    // @GetMapping("")
-    // public String allProducts() {
-    //     return "KUPA";
-    // }
 
 }

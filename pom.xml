@@ -18,6 +18,7 @@
 		<module>inventory-service</module>
 		<module>product-service</module>
 		<module>service-registry</module>
+		<module>hystrix-dashboard</module>
 	</modules>
     </profile>
 </profiles>

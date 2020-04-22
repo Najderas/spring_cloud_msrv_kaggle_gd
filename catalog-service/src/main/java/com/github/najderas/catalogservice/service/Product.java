@@ -2,16 +2,6 @@ package com.github.najderas.catalogservice.service;
 
 
 public class Product implements java.io.Serializable {
-    /*
-    // @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    // @Column(nullable = false, unique = true)
-    private String code;
-    // @Column(nullable = false)
-    private String name;
-    private String description;
-    private double price;
-    */
 
     public String uniq_id;
     public String sku;

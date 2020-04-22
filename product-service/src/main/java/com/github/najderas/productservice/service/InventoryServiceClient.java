@@ -1,7 +1,5 @@
 package com.github.najderas.productservice.service;
 
-// import com.github.najderas.productservice.service.Product;
-
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
@@ -12,9 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-// import java.util.Optional;
-import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -55,7 +50,6 @@ public class InventoryServiceClient {
     }
 
     public Integer findProductQuantityFallback(String _code) throws ServiceUnavailableException {
-        // return null;
         throw new ServiceUnavailableException("Inventory service unavailable! Cannot procede with request.");
     }
 
